@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moje Portfolio — AI Worklog + Q&A</title>
+  <meta name="description" content="Responsywne portfolio z dokumentacją pracy z AI i sekcją Q&A." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --panel: #111319;
+      --panel-2: #171924;
+      --text: #e6e8ee;
+      --muted: #a7adbb;
+      --brand: #7c5cff;
+      --accent: #2ee6a6;
+      --danger: #ff5c7a;
+      --ring: rgba(124,92,255,.35);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f7f8fb; --panel:#ffffff; --panel-2:#f1f3f9; --text:#0e1117; --muted:#5b657a; --ring:rgba(124,92,255,.25); }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    header{position:sticky; top:0; z-index:40; backdrop-filter:blur(10px); background:rgba(17,17,17,.95); border-bottom:1px solid rgba(124,92,255,.15)}
+    @media (prefers-color-scheme: light){ header{background:rgba(247,248,251,.95)} }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:1rem}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .logo{width:36px; height:36px; display:grid; place-items:center; background:linear-gradient(135deg,var(--brand),#9f93ff); color:white; border-radius:10px;}
+    .nav a{font-weight:600; color:var(--text); text-decoration:none; margin-inline:.5rem}
+    .btn{padding:8px 12px; border-radius:8px; border:none; cursor:pointer}
+
+    section{padding:2rem; max-width:1000px; margin:auto}
+    .card{background:var(--panel); padding:1rem; border-radius:var(--radius)}
+    .stack{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{padding:6px 10px; border-radius:999px; background:rgba(124,92,255,.12); border:1px solid rgba(124,92,255,.35); font-size:12px}
+    details{background:var(--panel); border-radius:12px; padding:14px 16px; margin-top:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">AI</div>
+        <span>Twoje Imię</span>
+      </div>
+      <nav>
+        <a href="#o-mnie">O mnie</a>
+        <a href="#umiejetnosci">Umiejętności</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#ai-worklog">AI Worklog</a>
+        <a href="#qa">Q&A</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="o-mnie">
+      <h2>Informacje o mnie i doświadczenie</h2>
+      <div class="card">
+        <p>Opis zawodowy i doświadczenie...</p>
+      </div>
+    </section>
+
+    <section id="umiejetnosci">
+      <h2>Umiejętności techniczne</h2>
+      <div class="stack">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+      </div>
+    </section>
+
+    <section id="projekty">
+      <h2>Projekty</h2>
+      <div class="card">Projekt 1 – opis</div>
+      <div class="card">Projekt 2 – opis</div>
+    </section>
+
+    <section id="ai-worklog">
+      <h2>Dokumentacja pracy z AI</h2>
+      <div class="card">
+        <details open>
+          <summary><strong>Wpis #1 — Data: <span id="today"></span></strong></summary>
+          <ul>
+            <li><strong>Cel:</strong> ...</li>
+            <li><strong>Prompt / polecenie:</strong> ...</li>
+            <li><strong>Odpowiedź AI:</strong> ...</li>
+            <li><strong>Decyzje projektowe:</strong> ...</li>
+            <li><strong>Iteracje:</strong> ...</li>
+            <li><strong>Wnioski:</strong> ...</li>
+          </ul>
+        </details>
+        <button id="addLog" class="btn">+ Dodaj wpis</button>
+      </div>
+    </section>
+
+    <section id="qa">
+      <h2>Q&A</h2>
+      <details>
+        <summary>Jak zadbać o wydajność frontendu?</summary>
+        <p>Code-splitting, lazy loading, optymalizacja obrazów...</p>
+      </details>
+      <details>
+        <summary>Jak dokumentować pracę z AI?</summary>
+        <p>Logowanie promptów, notowanie decyzji, testy wyników...</p>
+      </details>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('today').textContent = new Date().toISOString().slice(0,10);
+    const logContainer = document.querySelector('#ai-worklog .card');
+    document.getElementById('addLog').addEventListener('click', () => {
+      const details = document.createElement('details');
+      const idx = logContainer.querySelectorAll('details').length + 1;
+      details.innerHTML = `<summary><strong>Wpis #${idx} — Data: ${new Date().toISOString().slice(0,10)}</strong></summary><ul><li><strong>Cel:</strong> …</li><li><strong>Prompt:</strong> …</li><li><strong>Odpowiedź AI:</strong> …</li><li><strong>Decyzje projektowe:</strong> …</li><li><strong>Iteracje:</strong> …</li><li><strong>Wnioski:</strong> …</li></ul>`;
+      logContainer.appendChild(details);
+      details.open = true;
+    });
+  </script>
+</body>
+</html>
