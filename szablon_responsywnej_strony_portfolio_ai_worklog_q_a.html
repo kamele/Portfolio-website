@@ -22,9 +22,16 @@
       --radius: 16px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-    @media (prefers-color-scheme: light) {
-      :root { --bg:#f7f8fb; --panel:#ffffff; --panel-2:#f1f3f9; --text:#0e1117; --muted:#5b657a; --ring:rgba(124,92,255,.25); }
+
+    body.light {
+      --bg:#f7f8fb;
+      --panel:#ffffff;
+      --panel-2:#f1f3f9;
+      --text:#0e1117;
+      --muted:#5b657a;
+      --ring:rgba(124,92,255,.25);
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -33,20 +40,59 @@
       color:var(--text);
       line-height:1.6;
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      transition: background 0.3s, color 0.3s;
     }
-    header{position:sticky; top:0; z-index:40; backdrop-filter:blur(10px); background:rgba(17,17,17,.95); border-bottom:1px solid rgba(124,92,255,.15)}
-    @media (prefers-color-scheme: light){ header{background:rgba(247,248,251,.95)} }
+    header{position:sticky; top:0; z-index:40; backdrop-filter:blur(10px); background:rgba(17,17,17,.95); border-bottom:1px solid rgba(124,92,255,.15); transition: background 0.3s;}
+    body.light header{background:rgba(247,248,251,.95)}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:1rem}
     .brand{display:flex; align-items:center; gap:12px; font-weight:700}
     .logo{width:36px; height:36px; display:grid; place-items:center; background:linear-gradient(135deg,var(--brand),#9f93ff); color:white; border-radius:10px;}
     .nav a{font-weight:600; color:var(--text); text-decoration:none; margin-inline:.5rem}
-    .btn{padding:8px 12px; border-radius:8px; border:none; cursor:pointer}
+    .btn{padding:8px 12px; border-radius:8px; border:none; cursor:pointer; background:var(--brand); color:#fff;}
 
     section{padding:2rem; max-width:1000px; margin:auto}
-    .card{background:var(--panel); padding:1rem; border-radius:var(--radius)}
+    .card{background:var(--panel); padding:1rem; border-radius:var(--radius); transition: background 0.3s}
     .stack{display:flex; flex-wrap:wrap; gap:8px}
     .tag{padding:6px 10px; border-radius:999px; background:rgba(124,92,255,.12); border:1px solid rgba(124,92,255,.35); font-size:12px}
     details{background:var(--panel); border-radius:12px; padding:14px 16px; margin-top:10px}
+
+    /* Karuzela */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+    .carousel-item .card {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-btn {
+      background: var(--brand);
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
@@ -63,6 +109,7 @@
         <a href="#ai-worklog">AI Worklog</a>
         <a href="#qa">Q&A</a>
       </nav>
+      <button id="themeToggle" class="btn">🌙</button>
     </div>
   </header>
 
@@ -86,8 +133,17 @@
 
     <section id="projekty">
       <h2>Projekty</h2>
-      <div class="card">Projekt 1 – opis</div>
-      <div class="card">Projekt 2 – opis</div>
+      <div class="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-item"><div class="card">Projekt 1 – opis</div></div>
+          <div class="carousel-item"><div class="card">Projekt 2 – opis</div></div>
+          <div class="carousel-item"><div class="card">Projekt 3 – opis</div></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn">◀</button>
+          <button class="carousel-btn" id="nextBtn">▶</button>
+        </div>
+      </div>
     </section>
 
     <section id="ai-worklog">
@@ -104,32 +160,59 @@
             <li><strong>Wnioski:</strong> ...</li>
           </ul>
         </details>
-        <button id="addLog" class="btn">+ Dodaj wpis</button>
       </div>
     </section>
 
     <section id="qa">
       <h2>Q&A</h2>
+      <h3>Frontend</h3>
       <details>
         <summary>Jak zadbać o wydajność frontendu?</summary>
         <p>Code-splitting, lazy loading, optymalizacja obrazów...</p>
       </details>
       <details>
-        <summary>Jak dokumentować pracę z AI?</summary>
-        <p>Logowanie promptów, notowanie decyzji, testy wyników...</p>
+        <summary>Jak stosować responsywność?</summary>
+        <p>Media queries, flexbox/grid, testy na różnych urządzeniach...</p>
+      </details>
+
+      <h3>Backend</h3>
+      <details>
+        <summary>Jak projektować API?</summary>
+        <p>REST/GraphQL, dokumentacja OpenAPI, wersjonowanie...</p>
+      </details>
+      <details>
+        <summary>Jak dbać o bezpieczeństwo backendu?</summary>
+        <p>Walidacja danych wejściowych, uwierzytelnianie, szyfrowanie...</p>
       </details>
     </section>
   </main>
 
   <script>
     document.getElementById('today').textContent = new Date().toISOString().slice(0,10);
-    const logContainer = document.querySelector('#ai-worklog .card');
-    document.getElementById('addLog').addEventListener('click', () => {
-      const details = document.createElement('details');
-      const idx = logContainer.querySelectorAll('details').length + 1;
-      details.innerHTML = `<summary><strong>Wpis #${idx} — Data: ${new Date().toISOString().slice(0,10)}</strong></summary><ul><li><strong>Cel:</strong> …</li><li><strong>Prompt:</strong> …</li><li><strong>Odpowiedź AI:</strong> …</li><li><strong>Decyzje projektowe:</strong> …</li><li><strong>Iteracje:</strong> …</li><li><strong>Wnioski:</strong> …</li></ul>`;
-      logContainer.appendChild(details);
-      details.open = true;
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      toggleBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+    });
+
+    // Karuzela
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + track.children.length) % track.children.length;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % track.children.length;
+      updateCarousel();
     });
   </script>
 </body>
