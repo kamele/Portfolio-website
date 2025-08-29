@@ -149,11 +149,10 @@
           <div class="project-carousel">
             <button class="carousel-btn" id="proj1-prev">◀</button>
             <div class="carousel-images" id="proj1-carousel">
-              <img src="images/Scheamat_metody.png" alt="Schemat blokowy metody przetwarzania pomiaru ">
               <img src="images/Wizualizacja_trajektorii_strzalu.png"
                 alt="Rekonstrukcja wizualizacji trajektorii strzałuz podziałem na fazy ">
-              <img src="images/Schemat_obliczanie_metryk.png"
-                alt="Schemat blokowy obliczania metryk dla poszczególnych strzałów">
+              <img src="images/Umiejcowienie czujnika na ręce.jpg" alt="Umiejcowienie czujnika na ręce">
+              <img src="images/Łuk.png" alt="Łuk">
             </div>
             <button class="carousel-btn" id="proj1-next">▶</button>
           </div>
@@ -196,15 +195,80 @@
           prostym projekcie byłby po prostu nadmiarowy.
         </p>
         <h3>Dokumentacja pracy z AI</h3>
-        <ul>
-          <li>Wygenerowanie szkieletu strony i sekcji na podstawie promptów.</li>
-          <li>Redakcja i skracanie tekstów oraz sekcji Q&A przy wsparciu AI.</li>
-          <li>Propozycje układu sekcji umiejętności i ich grupowania.</li>
-          <li>Wskazówki dotyczące optymalizacji kodu HTML i CSS.</li>
-          <li>Wyjaśnienia dotyczące tagów w &lt;head&gt; oraz doboru technologii frontendowych.</li>
-          <li>Automatyzacja powtarzalnych fragmentów kodu oraz poprawki stylistyczne.</li>
-          <li>Iteracyjne poprawki na podstawie feedbacku i kolejnych promptów.</li>
-        </ul>
+        <details>
+          <summary>1. Utworzenie szkieletu strony</summary>
+          <strong>Mój prompt:</strong>
+          <i>Chce stworzyć strone z poniższą zawartością. Zawartość strony: O mnie i moim doświadczeniu Twoje,
+            umiejętności
+            techniczne, Projekty, Dokumentacja pracy z AI, sekcja Q&A: Odpowiedzi na pytania techniczne. Ważna jest
+            responsywność i prezentacja strony. Wygeneruj mi szablon w HTML/CSS/JS.</i>
+          <strong>Odpowiedź AI:</strong>
+          Wygenerowano strukturę HTML z podanymi sekcjami. Style stanowiły część pliku otrzymanego pliku HTML.
+          Oprócz kodu zwrócona została rózniwż poniższa wiadomość:
+          <i>Gotowe! Wrzuciłem Ci do canvasu kompletny, responsywny szablon w czystym HTML/CSS/JS z sekcjami:
+            O mnie / Doświadczenie (z osią czasu)
+            Umiejętności (tagi technologii)
+            Projekty (karty)
+            AI Worklog (szablon wpisów, przyciski: dodaj/rozwiń/zwiń, data automatycznie)
+            Q&A (akordeony + filtr wyszukiwania)
+            Motyw jasny/ciemny, sticky nawigacja, druk do PDF</i>
+
+          <strong>Moje poprawki/prośby:</strong>
+
+          W kolejnych krokach prosiłam ChatGPT o zmiany w zaproponowanym kodzie. Ze względu na liczbę poprawek, zdecydowałam się przedstawić przykładowe tylko prośby o poprawki:
+          <ul>
+            <li>
+              <p><i>Usuń możliwość dodawania wpisów z dokumentacji pracy z AI.</p></i>
+              <p>Odpowiedź AI:<i>Usunąłem możliwość dodawania wpisów w
+                  sekcji dokumentacji pracy z AI – teraz są tam tylko statyczne logi.</i></p>
+            </li>
+            <li>
+              <p>W ciemnym motywie pasek nav też powinien być ciemny</p>
+              <p>Odpowiedź AI:<i>Usunąłem możliwość dodawania wpisów w
+                  sekcji dokumentacji pracy z AI – teraz są tam tylko statyczne logi.</i></p>
+            </li>
+            <li>
+              <p>Dodaj ciemny motyw</p>
+              <p>Odpowiedź AI:<i>Dodałem przełącznik trybu jasny/ciemny 🌙☀️ – domyślnie strona startuje w ciemnym
+                  motywie, a kliknięciem można zmienić styl.</i></p>
+            </li>
+            <li>
+              <p>Przedstaw projekty w postaci karuzeli</p>
+              <p>Odpowiedź AI:<i>Dodałem prostą karuzelę projektów z przyciskami ◀ ▶. Dzięki temu każdy projekt wyświetla się w formie slajdu, a użytkownik może je przewijać.</i></p>
+            </li>
+            <li>
+              <p>Slajdy projektów mają być bardziej kwadratowe</p>
+              <p>Odpowiedź AI:<i>Zmodyfikowałem styl karuzeli, żeby slajdy projektów były bardziej kwadratowe — karty mają teraz ustaloną wysokość i proporcje zbliżone do kwadratu.</i></p>
+            </li>
+            <li>
+              <p>Sekcja Q&A powinna mieć tematyczne podsekcje np. frontend, backend w których są pytania do konkretnych
+                dziedzin</p>
+              <p>Odpowiedź AI:<i>Dodajmy w sekcji Q&A podział na tematyczne podsekcje (np. Frontend, Backend) i w każdej z nich pytania oraz odpowiedzi. To ułatwi nawigację i segregację treści.</i></p>
+            </li>
+            <li>
+              <p>Dodaj sekcje o doświadczeniu osobno</p>
+              <p>Odpowiedź AI:<i>Sekcja o doświadczeniu została dodana osobno między „O mnie” a „Umiejętności”.</i></p>
+            </li>
+          </ul>
+          <strong>Podsumowanie:</strong>
+
+          AI przyspieszyło start projektu, pozwalając szybko wygenerować bazową strukturę i podział na sekcje. Pozwoliło również na szybkie przetestowanie różnych możliwości układu.
+
+        </details>
+        <details>
+          <summary>2. Ustawienie ramowych sekcji i stylów</summary>
+          
+
+        </details>
+        <details>
+          <summary>3. Karuzela projektów i galeria obrazów</summary>
+        </details>
+        <details>
+          <summary>4. Redakcja tekstów i sekcji Q&A</summary>
+        </details>
+        <details>
+          <summary>5. Podsumowanie pracy z AI</summary>
+        </details>
       </div>
     </section>
 

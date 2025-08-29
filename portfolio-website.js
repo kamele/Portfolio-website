@@ -25,7 +25,7 @@ nextBtn.addEventListener('click', () => {
     updateCarousel();
 });
 
-// Project 1 image carousel (responsive, always show as many as fit)
+// Project 1 image carousel (show all images if they fit, otherwise show carousel with arrows)
 (function () {
     const carousel = document.getElementById('proj1-carousel');
     if (!carousel) return;
@@ -50,8 +50,8 @@ nextBtn.addEventListener('click', () => {
                 images[i].style.display = 'none';
             }
         }
-        prevBtn.style.display = (current > 0) ? 'block' : 'none';
-        nextBtn.style.display = (current + visibleCount < images.length) ? 'block' : 'none';
+        prevBtn.style.display = current > 0 ? 'flex' : 'none';
+        nextBtn.style.display = (current + visibleCount < images.length) ? 'flex' : 'none';
     }
 
     function onResize() {
