@@ -1,0 +1,84 @@
+    :root {
+      --bg: #0b0c10;
+      --panel: #111319;
+      --panel-2: #171924;
+      --text: #e6e8ee;
+      --muted: #a7adbb;
+      --brand: #7c5cff;
+      --accent: #2ee6a6;
+      --danger: #ff5c7a;
+      --ring: rgba(124,92,255,.35);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    body.light {
+      --bg:#f7f8fb;
+      --panel:#ffffff;
+      --panel-2:#f1f3f9;
+      --text:#0e1117;
+      --muted:#5b657a;
+      --ring:rgba(124,92,255,.25);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      transition: background 0.3s, color 0.3s;
+    }
+    header{position:sticky; top:0; z-index:40; backdrop-filter:blur(10px); background:rgba(17,17,17,.95); border-bottom:1px solid rgba(124,92,255,.15); transition: background 0.3s;}
+    body.light header{background:rgba(247,248,251,.95)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:1rem}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .logo{width:36px; height:36px; display:grid; place-items:center; background:linear-gradient(135deg,var(--brand),#9f93ff); color:white; border-radius:10px;}
+    .nav a{font-weight:600; color:var(--text); text-decoration:none; margin-inline:.5rem}
+    .btn{padding:8px 12px; border-radius:8px; border:none; cursor:pointer; background:var(--brand); color:#fff;}
+
+    section{padding:2rem; max-width:1000px; margin:auto}
+    .card{background:var(--panel); padding:1rem; border-radius:var(--radius); transition: background 0.3s}
+    .stack{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{padding:6px 10px; border-radius:999px; background:rgba(124,92,255,.12); border:1px solid rgba(124,92,255,.35); font-size:12px}
+    details{background:var(--panel); border-radius:12px; padding:14px 16px; margin-top:10px}
+
+    /* Karuzela */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+    .carousel-item .card {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-btn {
+      background: var(--brand);
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+    }
