@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="portfolio-website.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <a href="#experience">Doświadczenie</a>
         <a href="#skills">Umiejętności</a>
         <a href="#projects">Projekty</a>
-        <a href="#ai-worklog">AI</a>
+        <a href="#implementation">Realizacja</a>
         <a href="#qa">Q&A</a>
       </nav>
       <button id="themeToggle" class="btn">🌙</button>
@@ -171,14 +171,6 @@
       </div>
     </section>
 
-    <section id="ai-worklog">
-      <h2>Dokumentacja pracy z AI</h2>
-      <p>Utorzenie szkieletu strony</p>
-      <p>Ustawienie ramowych sekcji</p>
-      <p>Ustawienie kolorystyki i zmiany motywu</p>
-      <p>Odpowiedzi na pytania - redakcja</p>
-    </section>
-
     <section id="implementation">
       <h2>Realizacja strony</h2>
       <div class="card">
@@ -189,33 +181,38 @@
           prezentowania treści, więc nie wymaga bardzo zaawansowanych mechanizmów. Jako zadanie rekrutacyjne oraz po
           prostu autoprezentacja szanse na konieczność dalszego rozwoju tej strony i rozbudowy o kolejne bardziej
           skomplikowane moduły są nikłe. Dla strony bardzo ważna jest responsywność i w miarę krótki czas
-          implementacji
-          ze względu na ograniczenia czasowe. Na tej podstawie ustaliłam, że najlepszym rozwiązaniem, będzie wykonanie
+          implementacji ze względu na ograniczenia czasowe. Na tej podstawie ustaliłam, że najlepszym rozwiązaniem,
+          będzie wykonanie
           tej strony przy pomocy HTML’a, CSS’a i JS’a. Pozwoli to możliwie mocno ograniczyć zbędny kod, który przy tak
           prostym projekcie byłby po prostu nadmiarowy.
         </p>
+
         <h3>Dokumentacja pracy z AI</h3>
         <details>
           <summary>1. Utworzenie szkieletu strony</summary>
-          <strong>Mój prompt:</strong>
-          <i>Chce stworzyć strone z poniższą zawartością. Zawartość strony: O mnie i moim doświadczeniu Twoje,
-            umiejętności
-            techniczne, Projekty, Dokumentacja pracy z AI, sekcja Q&A: Odpowiedzi na pytania techniczne. Ważna jest
-            responsywność i prezentacja strony. Wygeneruj mi szablon w HTML/CSS/JS.</i>
-          <strong>Odpowiedź AI:</strong>
-          Wygenerowano strukturę HTML z podanymi sekcjami. Style stanowiły część pliku otrzymanego pliku HTML.
-          Oprócz kodu zwrócona została rózniwż poniższa wiadomość:
-          <i>Gotowe! Wrzuciłem Ci do canvasu kompletny, responsywny szablon w czystym HTML/CSS/JS z sekcjami:
-            O mnie / Doświadczenie (z osią czasu)
-            Umiejętności (tagi technologii)
-            Projekty (karty)
-            AI Worklog (szablon wpisów, przyciski: dodaj/rozwiń/zwiń, data automatycznie)
-            Q&A (akordeony + filtr wyszukiwania)
-            Motyw jasny/ciemny, sticky nawigacja, druk do PDF</i>
-
+          <p>
+            <strong>Mój prompt:</strong>
+            <i>Chce stworzyć strone z poniższą zawartością. Zawartość strony: O mnie i moim doświadczeniu Twoje,
+              umiejętności
+              techniczne, Projekty, Dokumentacja pracy z AI, sekcja Q&A: Odpowiedzi na pytania techniczne. Ważna jest
+              responsywność i prezentacja strony. Wygeneruj mi szablon w HTML/CSS/JS.</i>
+          </p>
+          <p>
+            <strong>Odpowiedź AI:</strong>
+            Wygenerowano strukturę HTML z podanymi sekcjami. Style stanowiły część pliku otrzymanego pliku HTML.
+            Oprócz kodu zwrócona została rózniwż poniższa wiadomość:
+            <i>Gotowe! Wrzuciłem Ci do canvasu kompletny, responsywny szablon w czystym HTML/CSS/JS z sekcjami:
+              O mnie / Doświadczenie (z osią czasu)
+              Umiejętności (tagi technologii)
+              Projekty (karty)
+              AI Worklog (szablon wpisów, przyciski: dodaj/rozwiń/zwiń, data automatycznie)
+              Q&A (akordeony + filtr wyszukiwania)
+              Motyw jasny/ciemny, sticky nawigacja, druk do PDF</i>
+          </p>
           <strong>Moje poprawki/prośby:</strong>
 
-          W kolejnych krokach prosiłam ChatGPT o zmiany w zaproponowanym kodzie. Ze względu na liczbę poprawek, zdecydowałam się przedstawić przykładowe tylko prośby o poprawki:
+          W kolejnych krokach prosiłam ChatGPT o zmiany w zaproponowanym kodzie. Ze względu na liczbę poprawek,
+          zdecydowałam się przedstawić przykładowe tylko prośby o poprawki:
           <ul>
             <li>
               <p><i>Usuń możliwość dodawania wpisów z dokumentacji pracy z AI.</p></i>
@@ -234,16 +231,19 @@
             </li>
             <li>
               <p>Przedstaw projekty w postaci karuzeli</p>
-              <p>Odpowiedź AI:<i>Dodałem prostą karuzelę projektów z przyciskami ◀ ▶. Dzięki temu każdy projekt wyświetla się w formie slajdu, a użytkownik może je przewijać.</i></p>
+              <p>Odpowiedź AI:<i>Dodałem prostą karuzelę projektów z przyciskami ◀ ▶. Dzięki temu każdy projekt
+                  wyświetla się w formie slajdu, a użytkownik może je przewijać.</i></p>
             </li>
             <li>
               <p>Slajdy projektów mają być bardziej kwadratowe</p>
-              <p>Odpowiedź AI:<i>Zmodyfikowałem styl karuzeli, żeby slajdy projektów były bardziej kwadratowe — karty mają teraz ustaloną wysokość i proporcje zbliżone do kwadratu.</i></p>
+              <p>Odpowiedź AI:<i>Zmodyfikowałem styl karuzeli, żeby slajdy projektów były bardziej kwadratowe — karty
+                  mają teraz ustaloną wysokość i proporcje zbliżone do kwadratu.</i></p>
             </li>
             <li>
               <p>Sekcja Q&A powinna mieć tematyczne podsekcje np. frontend, backend w których są pytania do konkretnych
                 dziedzin</p>
-              <p>Odpowiedź AI:<i>Dodajmy w sekcji Q&A podział na tematyczne podsekcje (np. Frontend, Backend) i w każdej z nich pytania oraz odpowiedzi. To ułatwi nawigację i segregację treści.</i></p>
+              <p>Odpowiedź AI:<i>Dodajmy w sekcji Q&A podział na tematyczne podsekcje (np. Frontend, Backend) i w każdej
+                  z nich pytania oraz odpowiedzi. To ułatwi nawigację i segregację treści.</i></p>
             </li>
             <li>
               <p>Dodaj sekcje o doświadczeniu osobno</p>
@@ -252,22 +252,148 @@
           </ul>
           <strong>Podsumowanie:</strong>
 
-          AI przyspieszyło start projektu, pozwalając szybko wygenerować bazową strukturę i podział na sekcje. Pozwoliło również na szybkie przetestowanie różnych możliwości układu.
+          AI przyspieszyło start projektu, pozwalając szybko wygenerować bazową strukturę i podział na sekcje. Pozwoliło
+          również na szybkie przetestowanie różnych możliwości układu.
 
         </details>
         <details>
           <summary>2. Ustawienie ramowych sekcji i stylów</summary>
-          
+          <p>
+            W kolejnych krokach korzystałam z wygenerowanego szablonu wprowadzając kolejne zmiany.
+            Skupiłam się w tym kroku na ustaleniu ogólnego wyglądu i konkretnym już wydzieleniu sekcji.
+            Pracując z AI, testowałam różne zaproponowane szaty graficzne dla strony. Poniżej przedstawiono kilka
+            przykładowych promptów:
+          </p>
+          <ul>
+            <li>
+              <p>Dodaj sekcje o doświadczeniu osobno</p>
+              <p>Odpowiedź AI:<i>Sekcja o doświadczeniu została dodana osobno między „O mnie” a „Umiejętności”.</i></p>
+            </li>
+            <li>
+              <p>Zaproponuj inną kolorystykę strony</p>
+              <p>Odpowiedź AI:<i>Możemy nadać stronie bardziej nowoczesny i czytelny wygląd, zachowując ciemny motyw,
+                  ale z akcentami kolorystycznymi.Oto przykładowa propozycja kolorystyki:🎨 Propozycja nowej kolorystyki
+                  Tło strony: #0d1117 (ciemny grafit, elegancki)
+                  Tło sekcji/nawigacji: #161b22 (nieco jaśniejsze od tła, dla kontrastu)
+                  Nagłówki: #58a6ff (niebieski akcent, czytelny na ciemnym tle)
+                  Tekst główny: #c9d1d9 (jasnoszary, dobrze czytelny)
+                  Tagi/akcenty: #238636 (zielony GitHub-like dla wyróżnień)
+                  Przyciski/linki hover: #f78166 (pomarańczowy akcent dla interakcji)
+                  Karuzela projektów: tło kart #21262d, obramowanie #30363d, hover z lekkim rozjaśnieniem.
+                  Mogę od razu zmienić w Twoim kodzie CSS wszystkie style na tę paletę, żebyś zobaczył efekt.</i>
+              </p>
+            </li>
+            <li>
+              <p>Zapoponuj inną szatę graficzną. Powinna być jaśniejsza, ale wciąż wyglądać profesjonalnie.</p>
+              <p>Odpowiedź AI:<i>Możesz przejść na jasny, elegancki styl, który zachowuje profesjonalny wygląd, ale jest
+                  bardziej przejrzysty i mniej „ciężki” niż obecny ciemny motyw.
+                  Propozycja szaty graficznej:
+                  Tło: jasnoszare (#f8f9fa) lub białe (#ffffff)
+                  Tekst główny: ciemnoszary (#212529) dla lepszej czytelności
+                  Nagłówki: granat (#0d6efd) lub ciemny niebieski (#003366)
+                  Akcenty: pomarańcz (#fd7e14) lub zielony (#198754), używany w hoverach i tagach
+                  Karty / karuzela: delikatny cień i biały box (#ffffff z border-radius: 10px, box-shadow:
+                  rgba(0,0,0,0.1) 0px 4px 12px)
+                  Tagi umiejętności: pastelowe odcienie z kontrastowym tekstem (np. #e3f2fd z niebieskim tekstem)
+                  Nawigacja: lekki pasek nawigacyjny w bieli z cienką dolną linią (#dee2e6), hover w kolorze
+                  akcentowym.</i></p>
+            </li>
+          </ul>
+          <strong>Podsumowanie:</strong>
 
+          AI przyspieszyło start projektu, pozwalając szybko wygenerować bazową strukturę i podział na sekcje. Pozwoliło
+          również na szybkie przetestowanie różnych możliwości układu.
         </details>
         <details>
-          <summary>3. Karuzela projektów i galeria obrazów</summary>
+          <summary>3. Redakcja tekstów i sekcji Q&A</summary>
+          <p>
+            W tym kroku skupiłam się na redakcji tekstów oraz organizacji sekcji Q&A. Wspólnie z AI przeszliśmy przez
+            istniejące pytania i odpowiedzi, wprowadzając poprawki stylistyczne oraz merytoryczne. Dodatkowo poprosiłam
+            go o podanie definicji/odpowiedzi na dane pytanie i porównywałam zrozumiałość odpowiedzi. Następnie prosiłam
+            go by je połączył i poprawił by uzyskać spójność wypowiedzi.
+          </p>
+          <p>
+            <strong>Przykładowo mój prompt:</strong>
+            <i>Potrzebuje odpowiedzi na techniczne pytania, razem z objaśnieniem, przykładem i źródłem. Pytanie: Opisz
+              różnicę między position: relative, absolute i fixed w CSS</i>
+          </p>
+          <p>
+            <strong>Odpowiedź AI:</strong>
+            Wygenerowano strukturę HTML z podanymi sekcjami. Style stanowiły część pliku otrzymanego pliku HTML.
+            Oprócz kodu zwrócona została rózniwż poniższa wiadomość:
+            <i>1. position: relative
+              Opis:
+              Element pozostaje w normalnym układzie strony, ale można go przesunąć względem swojego pierwotnego
+              położenia za pomocą właściwości takich jak top, left, right, bottom.
+              Zajmowane przez niego miejsce w dokumencie pozostaje takie samo (nie „wychodzi” z flow).
+              Przykład: [tu był podany jednolinijkowy przykład]
+              👉 Ten element przesunie się 20px w dół i 30px w prawo, ale w układzie strony miejsce „po staremu” nadal
+              będzie zajęte.
+              [To samo dla pozostałych dwuch pozycji]
+              🔹 Podsumowanie w tabeli
+              📚 Źródła:
+              MDN – position,
+              CSS Tricks – A Complete Guide to Positioning.
+            </i>
+          </p>
+          <p>
+            <strong>Mój prompt:</strong>
+            <i>Opisz różnice pomiędzy tymi trzema typami w trzech zdaniach.</i>
+          </p>
+          <p>
+            <strong>Odpowiedź AI:</strong>
+            <i>relative przesuwa element względem jego pierwotnego położenia, ale wciąż pozostaje on częścią normalnego
+              układu strony. absolute usuwa element z układu i pozycjonuje go względem najbliższego przodka z ustawionym
+              position innym
+              niż static. fixed również usuwa element z układu, ale zawsze przykleja go do okna przeglądarki,
+              niezależnie od
+              przewijania.</i>
+          </p>
+          <p>
+            <strong>Mój prompt:</strong>
+            <i>Napisz to pełnymi zdaniami</i>
+          </p>
+          <p>
+            <strong>Odpowiedź AI:</strong>
+            <i>Oczywiście 🙂
+              Element z ustawionym position: relative pozostaje w normalnym układzie strony, ale można go przesunąć
+              względem jego pierwotnej pozycji.
+              Element z ustawionym position: absolute jest usuwany z normalnego układu i pozycjonowany względem
+              najbliższego przodka, który ma ustawione position inne niż static.
+              Element z ustawionym position: fixed jest również usuwany z układu, ale zawsze pozostaje przyklejony do
+              okna przeglądarki, niezależnie od przewijania strony.</i>
+          </p>
+          <p>
+            <strong>Mój prompt:</strong>
+            <i>Wygeneruj krótką jednozdaniową definicję porównawczą jako podsumowanie</i>
+          </p>
+          <p>
+            <strong>Odpowiedź AI:</strong>
+            <i>W skrócie: relative przesuwa element względem jego własnej pozycji, absolute pozycjonuje go względem
+              najbliższego pozycjonowanego przodka, a fixed przykleja go na stałe do okna przeglądarki.</i>
         </details>
         <details>
-          <summary>4. Redakcja tekstów i sekcji Q&A</summary>
+          <summary>4. Praca z kodem</summary>
+          <p>Pracując już z wypełnionym szablonem używałam GitHub Copilot'a do generowania fragmentów kodu, wyszukiwania
+            miejsc do poprawy oraz wprowadzania poprawek. Przykłądem tutaj mogą być tagi używane przy umiejętnościach.
+            Za pomocą Copilot'a łatwo wprowadzić zmiany takie jak np dodanie odstępów między tagami, czy zmiana nazw
+            grup umiejętności. Dzięki temu, że Copilot widzi wybrany kontekst, mógł wprowadzić zmiany wynikające z pliku
+            HTML do pliku ze stylami. Było to bardzo poręczne, ponieważ nie wymagało ręcznego przenoszenia zmian styli
+            do pliku CSS.</p>
         </details>
         <details>
           <summary>5. Podsumowanie pracy z AI</summary>
+          <p>
+            Użycie AI przy tworzeniu tej strony znacząco przyspieszyło proces projektowania i implementacji. Pozwoliło
+            na szybkie wygenerowanie bazowej struktury i podziału na sekcje, co stanowi solidny fundament dla dalszej
+            pracy. W zależności od etapu pracy inne narzędzia okazały się najbardziej przydatne. W moim przypadku użyty
+            został ChatGPT oraz GitHub Copilot. ChatGPT sprawdził się doskonale przy generowaniu treści, redakcji tekstów oraz przy wprowadzaniu większych
+            zmian w strukturze i stylach strony. Jego zdolność do rozumienia kontekstu i dostarczania szczegółowych
+            odpowiedzi była nieoceniona, zwłaszcza przy tworzeniu sekcji Q&A, gdzie precyzyjne i zrozumiałe odpowiedzi
+            na techniczne pytania były kluczowe. Przy późniejszych etapach, gdy struktura była już ustalona, GitHub Copilot okazał się niezwykle
+            pomocny przy generowaniu fragmentów kodu, wyszukiwaniu miejsc do poprawy oraz wprowadzaniu drobnych poprawek. Jego integracja z edytorem kodu pozwalała na szybkie
+            i efektywne modyfikacje, co znacznie usprawniło proces kodowania.
+          </p>
         </details>
       </div>
     </section>
@@ -543,7 +669,7 @@
     </section>
   </main>
 
-  <script src="portfolio-website.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
