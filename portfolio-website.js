@@ -24,3 +24,57 @@ nextBtn.addEventListener('click', () => {
     index = (index + 1) % track.children.length;
     updateCarousel();
 });
+
+// Project 1 image carousel (responsive, always show as many as fit)
+(function () {
+    const carousel = document.getElementById('proj1-carousel');
+    if (!carousel) return;
+    const images = carousel.querySelectorAll('img');
+    const prevBtn = document.getElementById('proj1-prev');
+    const nextBtn = document.getElementById('proj1-next');
+    let current = 0;
+    let visibleCount = 3;
+
+    function updateVisibleCount() {
+        const containerWidth = carousel.offsetWidth;
+        visibleCount = Math.floor(containerWidth / 210); // 200px img + 10px gap
+        if (visibleCount < 1) visibleCount = 1;
+        if (visibleCount > images.length) visibleCount = images.length;
+    }
+
+    function showImages() {
+        for (let i = 0; i < images.length; i++) {
+            if (i >= current && i < current + visibleCount) {
+                images[i].style.display = 'inline-block';
+            } else {
+                images[i].style.display = 'none';
+            }
+        }
+        prevBtn.style.display = (current > 0) ? 'block' : 'none';
+        nextBtn.style.display = (current + visibleCount < images.length) ? 'block' : 'none';
+    }
+
+    function onResize() {
+        updateVisibleCount();
+        if (current + visibleCount > images.length) {
+            current = Math.max(0, images.length - visibleCount);
+        }
+        showImages();
+    }
+
+    prevBtn.onclick = function () {
+        if (current > 0) {
+            current--;
+            showImages();
+        }
+    };
+    nextBtn.onclick = function () {
+        if (current + visibleCount < images.length) {
+            current++;
+            showImages();
+        }
+    };
+
+    window.addEventListener('resize', onResize);
+    setTimeout(onResize, 100);
+})();

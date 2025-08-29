@@ -1,188 +1,252 @@
-    :root {
-        --bg: #0b0c10;
-        --panel: #111319;
-        --panel-2: #171924;
-        --text: #e6e8ee;
-        --muted: #a7adbb;
-        --brand: #7c5cff;
-        --accent: #2ee6a6;
-        --danger: #ff5c7a;
-        --ring: rgba(124, 92, 255, .35);
-        --radius: 16px;
-        --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-    }
+:root {
+    --bg: #0b0c10;
+    --panel: #111319;
+    --panel-2: #171924;
+    --text: #e6e8ee;
+    --muted: #a7adbb;
+    --brand: #7c5cff;
+    --accent: #2ee6a6;
+    --danger: #ff5c7a;
+    --ring: rgba(124, 92, 255, .35);
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
 
-    body.light {
-        --bg: #f7f8fb;
-        --panel: #ffffff;
-        --panel-2: #f1f3f9;
-        --text: #0e1117;
-        --muted: #5b657a;
-        --ring: rgba(124, 92, 255, .25);
-    }
+body.light {
+    --bg: #f7f8fb;
+    --panel: #ffffff;
+    --panel-2: #f1f3f9;
+    --text: #0e1117;
+    --muted: #5b657a;
+    --ring: rgba(124, 92, 255, .25);
+}
 
-    * {
-        box-sizing: border-box
-    }
+* {
+    box-sizing: border-box
+}
 
-    html,
-    body {
-        height: 100%
-    }
+html,
+body {
+    height: 100%
+}
 
-    body {
-        margin: 0;
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition: background 0.3s, color 0.3s;
-    }
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background 0.3s, color 0.3s;
+}
 
-    header {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        backdrop-filter: blur(10px);
-        background: rgba(17, 17, 17, .95);
-        border-bottom: 1px solid rgba(124, 92, 255, .15);
-        transition: background 0.3s;
-    }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(10px);
+    background: rgba(17, 17, 17, .95);
+    border-bottom: 1px solid rgba(124, 92, 255, .15);
+    transition: background 0.3s;
+}
 
-    body.light header {
-        background: rgba(247, 248, 251, .95)
-    }
+body.light header {
+    background: rgba(247, 248, 251, .95)
+}
 
-    .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 1rem
-    }
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 1rem
+}
 
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 700
-    }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700
+}
 
-    .logo {
-        width: 36px;
-        height: 36px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, var(--brand), #9f93ff);
-        color: white;
-        border-radius: 10px;
-    }
+.logo {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--brand), #9f93ff);
+    color: white;
+    border-radius: 10px;
+}
 
-    .nav a {
-        font-weight: 600;
-        color: var(--text);
-        text-decoration: none;
-        margin-inline: .5rem
-    }
+.nav a {
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    margin-inline: .5rem
+}
 
-    .btn {
-        padding: 8px 12px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        background: var(--brand);
-        color: #fff;
-    }
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: var(--brand);
+    color: #fff;
+}
 
-    section {
-        padding: 2rem;
-        max-width: 1000px;
-        margin: auto
-    }
+section {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto
+}
 
-    .card {
-        background: var(--panel);
-        padding: 1rem;
-        border-radius: var(--radius);
-        transition: background 0.3s
-    }
+.card {
+    background: var(--panel);
+    padding: 1rem;
+    border-radius: var(--radius);
+    transition: background 0.3s
+}
 
-    .stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px
-    }
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
 
-    .tag {
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(124, 92, 255, .12);
-        border: 1px solid rgba(124, 92, 255, .35);
-        font-size: 12px;
-        margin-right: 0.5em; 
-        margin-bottom: 0.5em
-    }
+.tag {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(124, 92, 255, .12);
+    border: 1px solid rgba(124, 92, 255, .35);
+    font-size: 12px;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em
+}
 
-    .skills-group {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 0.5em;
-    }
-    .skills-title {
-      min-width: 180px;
-      font-weight: 600;
-      margin-right: 0.5em; 
-    }
+.skills-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
 
-    details {
-        background: var(--panel);
-        border-radius: 12px;
-        padding: 14px 16px;
-        margin-top: 10px
-    }
+.skills-title {
+    min-width: 180px;
+    font-weight: 600;
+    margin-right: 0.5em;
+}
 
-    /* Karuzela */
-    .carousel {
-        position: relative;
-        overflow: hidden;
-    }
+details {
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-top: 10px
+}
 
-    .carousel-track {
-        display: flex;
-        transition: transform 0.5s ease;
-    }
+/* Karuzela */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
 
-    .carousel-item {
-        min-width: 100%;
-        box-sizing: border-box;
-        padding: 1rem;
-    }
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
 
-    .carousel-item .card {
-        aspect-ratio: 1 / 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
 
-    .carousel-controls {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-    }
+.carousel-item .card {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .carousel-btn {
-        background: var(--brand);
-        border: none;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        border-radius: 8px;
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-btn {
+    background: var(--brand);
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.project-carousel {
+    position: relative;
+    margin-top: 1em;
+}
+
+.carousel-images {
+    display: flex;
+    gap: 1em;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-images img {
+    max-width: 200px;
+    width: 100%;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* Styl przycisków karuzeli jako okrągłe z cieniem i efektem hover */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: var(--brand);
+    border: none;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.92;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus {
+    background: #5a3fdc;
+    box-shadow: 0 4px 16px rgba(124, 92, 255, 0.18);
+    opacity: 1;
+}
+
+#proj1-prev {
+    left: 0;
+}
+
+#proj1-next {
+    right: 0;
+}
+
+@media (max-width: 700px) {
+    .carousel-images img {
+        max-width: 120px;
     }
+}

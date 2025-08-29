@@ -92,7 +92,7 @@
       <h2>Umiejętności techniczne</h2>
       <div class="stack">
         <div class="skills-group">
-          <div class="skills-title">Programowanie i technologie webowe:</div>
+          <div class="skills-title">Web:</div>
           <span class="tag">JavaScript</span>
           <span class="tag">TypeScript</span>
           <span class="tag">Python</span>
@@ -104,21 +104,21 @@
           <span class="tag">Bootstrap</span>
         </div>
         <div class="skills-group">
-          <div class="skills-title">Projektowanie graficzne i bazy danych:</div>
+          <div class="skills-title">Design & DB:</div>
           <span class="tag">Adobe XD</span>
           <span class="tag">Figma</span>
           <span class="tag">MongoDB</span>
           <span class="tag">MySQL</span>
         </div>
         <div class="skills-group">
-          <div class="skills-title">Testowanie i API:</div>
+          <div class="skills-title">Testy & API:</div>
           <span class="tag">Google Test</span>
           <span class="tag">Jest</span>
           <span class="tag">Mocha</span>
           <span class="tag">REST API</span>
         </div>
         <div class="skills-group">
-          <div class="skills-title">Narzędzia i organizacja pracy:</div>
+          <div class="skills-title">Narzędzia:</div>
           <span class="tag">Git</span>
           <span class="tag">GitLab</span>
           <span class="tag">GitHub</span>
@@ -133,18 +133,41 @@
 
     <section id="projects">
       <h2>Projekty</h2>
-      <div class="carousel">
-        <div class="carousel-track" id="carouselTrack">
-          <div class="carousel-item">
-            <div class="card">Projekt 1 – opis</div>
-          </div>
-          <div class="carousel-item">
-            <div class="card">Projekt 2 – opis</div>
+      <p>Oto kilka projektów, nad którymi pracowałem/am. Każdy z nich pokazuje moje umiejętności w tworzeniu
+        nowoczesnych aplikacji i rozwiązań IT.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>System wspomagania treningu łuczniczego</h3>
+          <p>
+            Projekt polegał na analizie istniejących systemów wspomagania treningu łuczniczego i opracowaniu własnej
+            metody oceny strzału na podstawie danych z sensorów ruchu. Nowa metoda pozwalała nie tylko określić fazę, w
+            której wystąpił błąd, ale także oś zakłócenia oraz umożliwiała dostosowanie wag poszczególnych kryteriów w
+            końcowej ocenie. Eksperymenty wykazały, że dodatkowy czujnik na ręce naciągającej dostarcza cennych
+            informacji, a ruchy obu rąk w fazie celowania są silnie skorelowane. Opracowane rozwiązanie umożliwia lepszą
+            analizę błędów i personalizację oceny strzału.
+          </p>
+          <div class="project-carousel">
+            <button class="carousel-btn" id="proj1-prev">◀</button>
+            <div class="carousel-images" id="proj1-carousel">
+              <img src="images/Scheamat_metody.png" alt="Schemat blokowy metody przetwarzania pomiaru ">
+              <img src="images/Wizualizacja_trajektorii_strzalu.png"
+                alt="Rekonstrukcja wizualizacji trajektorii strzałuz podziałem na fazy ">
+              <img src="images/Schemat_obliczanie_metryk.png"
+                alt="Schemat blokowy obliczania metryk dla poszczególnych strzałów">
+            </div>
+            <button class="carousel-btn" id="proj1-next">▶</button>
           </div>
         </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn" id="prevBtn">◀</button>
-          <button class="carousel-btn" id="nextBtn">▶</button>
+        <div class="project-card">
+          <h3>Aplikacja do planowania ślubów i wesel</h3>
+          <p>
+            Aplikacja mobilna na platformę Android, napisana w języku Kotlin. Projekt był realizowany zespołowo,
+            równolegle w technologiach webowych, na Androida oraz iPhone'y. Po analizie dostępnych na rynku rozwiązań
+            wybrano najczęściej wykorzystywane funkcje, takie jak odliczanie dni do ślubu czy obsługa odpowiedzi
+            zaproszonych gości (RSVP). Dodano także moduł listy zadań do wykonania przed uroczystością. W planach
+            rozwoju przewidziano rozszerzenie aplikacji o moduły do planowania usadzenia gości oraz inne funkcje
+            wspierające organizację wesela.
+          </p>
         </div>
       </div>
     </section>
@@ -155,6 +178,34 @@
       <p>Ustawienie ramowych sekcji</p>
       <p>Ustawienie kolorystyki i zmiany motywu</p>
       <p>Odpowiedzi na pytania - redakcja</p>
+    </section>
+
+    <section id="implementation">
+      <h2>Realizacja strony</h2>
+      <div class="card">
+        <h3>Dobór technologii</h3>
+        <p>
+          Podczas wyboru technologii wzięłam pod uwagę poziom skomplikowania strony, responsywność, dalsze perspektywy
+          rozwoju oraz czas konieczny do jej wykonania. Strona w samej koncepcji jest dość prosta, służy jedynie do
+          prezentowania treści, więc nie wymaga bardzo zaawansowanych mechanizmów. Jako zadanie rekrutacyjne oraz po
+          prostu autoprezentacja szanse na konieczność dalszego rozwoju tej strony i rozbudowy o kolejne bardziej
+          skomplikowane moduły są nikłe. Dla strony bardzo ważna jest responsywność i w miarę krótki czas
+          implementacji
+          ze względu na ograniczenia czasowe. Na tej podstawie ustaliłam, że najlepszym rozwiązaniem, będzie wykonanie
+          tej strony przy pomocy HTML’a, CSS’a i JS’a. Pozwoli to możliwie mocno ograniczyć zbędny kod, który przy tak
+          prostym projekcie byłby po prostu nadmiarowy.
+        </p>
+        <h3>Dokumentacja pracy z AI</h3>
+        <ul>
+          <li>Wygenerowanie szkieletu strony i sekcji na podstawie promptów.</li>
+          <li>Redakcja i skracanie tekstów oraz sekcji Q&A przy wsparciu AI.</li>
+          <li>Propozycje układu sekcji umiejętności i ich grupowania.</li>
+          <li>Wskazówki dotyczące optymalizacji kodu HTML i CSS.</li>
+          <li>Wyjaśnienia dotyczące tagów w &lt;head&gt; oraz doboru technologii frontendowych.</li>
+          <li>Automatyzacja powtarzalnych fragmentów kodu oraz poprawki stylistyczne.</li>
+          <li>Iteracyjne poprawki na podstawie feedbacku i kolejnych promptów.</li>
+        </ul>
+      </div>
     </section>
 
     <section id="qa">
@@ -201,7 +252,8 @@
           parametry
           wysyłane są w treści żądania (body), co pozwala przesyłać większe ilości danych i ukrywać je przed
           użytkownikiem. <br>
-          Przykład: metoda GET może służyć do pobrania listy użytkowników z API, a POST do dodania nowego użytkownika do
+          Przykład: metoda GET może służyć do pobrania listy użytkowników z API, a POST do dodania nowego użytkownika
+          do
           bazy danych.
         </p>
       </details>
@@ -239,7 +291,8 @@
           Make, n8n czy Zapier służą do automatyzowania różnych zadań między aplikacjami i usługami online.
           Umożliwiają tworzenie przepływów pracy, gdzie zdarzenia w jednej aplikacji automatycznie
           wywołują działania w innych, np. zapisanie danych w bazie po otrzymaniu e-maila.
-          Dzięki temu można zaoszczędzić czas, ograniczyć ręczne wykonywanie powtarzalnych czynności i łatwo integrować
+          Dzięki temu można zaoszczędzić czas, ograniczyć ręczne wykonywanie powtarzalnych czynności i łatwo
+          integrować
           różne systemy bez konieczności pisania własnego kodu.
         </p>
       </details>
@@ -285,10 +338,12 @@
       <details>
         <summary>Opisz sytuację, w której AI może pomóc w supporcie technicznym</summary>
         <p>
-          AI może znacząco wspierać dział wsparcia technicznego, na przykład poprzez automatyczne odpowiadanie na często
+          AI może znacząco wspierać dział wsparcia technicznego, na przykład poprzez automatyczne odpowiadanie na
+          często
           zadawane pytania klientów w formie czatu lub e-maila. Może analizować zgłoszenia, klasyfikować je według
           rodzaju problemu i sugerować odpowiednie rozwiązania, co pozwala pracownikom skupić się na bardziej
-          skomplikowanych przypadkach. Dodatkowo AI może monitorować systemy w czasie rzeczywistym, wykrywać potencjalne
+          skomplikowanych przypadkach. Dodatkowo AI może monitorować systemy w czasie rzeczywistym, wykrywać
+          potencjalne
           błędy i generować wstępne raporty dla zespołu technicznego, przyspieszając proces diagnozy i naprawy
           problemów.
         </p>
@@ -306,7 +361,8 @@
 
       <h3>Problem Solving</h3>
       <details>
-        <summary>Klient pisze: "Wkleiłem wasz kod na stronę i wszystko się rozjechało". Jakie pierwsze kroki byś podjął?
+        <summary>Klient pisze: "Wkleiłem wasz kod na stronę i wszystko się rozjechało". Jakie pierwsze kroki byś
+          podjął?
         </summary>
         <p>
           Poprosiłabym klienta o przesłanie pliku z wklejonym kodem i sprawdziła, czy został on poprawnie wklejony w
@@ -319,10 +375,14 @@
         <summary>Miał(a)byś połączyć formularz kontaktowy z Google Sheets. Jak byś to zrobił(a)?</summary>
         <p>
           Sposób połączenia formularza kontaktowego z Google Sheets zależy od tego, jak został zbudowany formularz.
-          Zakładając, że jest to formularz Google, najpierw sprawdziłabym w dokumentacji, czy można zmienić lokalizację
-          końcowych wyników – formularze Google automatycznie zapisują odpowiedzi w arkuszu Google, więc nie powinno to
-          przysporzyć problemów. W przypadku formularzy zewnętrznych można użyć Google Apps Script do napisania skryptu,
-          który odbierze dane i zapisze je w odpowiednich komórkach arkusza, lub skorzystać z narzędzi do automatyzacji,
+          Zakładając, że jest to formularz Google, najpierw sprawdziłabym w dokumentacji, czy można zmienić
+          lokalizację
+          końcowych wyników – formularze Google automatycznie zapisują odpowiedzi w arkuszu Google, więc nie powinno
+          to
+          przysporzyć problemów. W przypadku formularzy zewnętrznych można użyć Google Apps Script do napisania
+          skryptu,
+          który odbierze dane i zapisze je w odpowiednich komórkach arkusza, lub skorzystać z narzędzi do
+          automatyzacji,
           takich jak Zapier, Make czy n8n, które pozwalają łatwo przesyłać nowe zgłoszenia do arkusza bez konieczności
           pisania własnego kodu.
         </p>
@@ -335,7 +395,8 @@
           Następnie zweryfikowałabym w narzędziach deweloperskich przeglądarki szerokość iFrame oraz stylów CSS,
           które mogą wpływać na jego rozmiar i układ strony. Aby poprawić problem, można ustawić w kodzie iFrame
           atrybuty width
-          i height w procentach lub użyć CSS z właściwościami <code>max-width: 100%</code> i <code>height: auto</code>,
+          i height w procentach lub użyć CSS z właściwościami <code>max-width: 100%</code> i
+          <code>height: auto</code>,
           co pozwoli dostosować iFrame do szerokości kontenera i zapewni responsywne wyświetlanie na różnych
           urządzeniach.
         </p>
@@ -343,11 +404,13 @@
       <details>
         <summary>Jak sprawdzić dokumentację i przygotować integrację API Hugging Face do analizy tekstu?</summary>
         <p>
-          Pierwszym krokiem byłoby dokładne przejrzenie dokumentacji API Hugging Face, aby zrozumieć dostępne endpointy,
+          Pierwszym krokiem byłoby dokładne przejrzenie dokumentacji API Hugging Face, aby zrozumieć dostępne
+          endpointy,
           wymagane parametry, metody uwierzytelniania oraz formaty danych wejściowych i wyjściowych. Następnie
           przygotowałabym środowisko testowe, w którym mogłabym wysyłać przykładowe żądania do API i analizować
           otrzymywane odpowiedzi, aby upewnić się, że integracja działa poprawnie. Kolejnym krokiem byłoby napisanie
-          kodu w naszym systemie, który wysyła dane tekstowe do API, odbiera wynik analizy i zapisuje go w odpowiedniej
+          kodu w naszym systemie, który wysyła dane tekstowe do API, odbiera wynik analizy i zapisuje go w
+          odpowiedniej
           strukturze w systemie, a na końcu przetestowanie całego procesu pod kątem różnych scenariuszy, aby zapewnić
           stabilność i poprawność integracji.
         </p>
@@ -358,8 +421,10 @@
           W sytuacji, gdy klient pyta o funkcję, której nie znam, najpierw przyznaję otwarcie, że nie posiadam od razu
           pełnej wiedzy na ten temat, aby zachować przejrzystość i profesjonalizm. Następnie zbieram jak najwięcej
           informacji od klienta, np. w jakim kontekście funkcja jest używana, i sprawdzam dokumentację lub zasoby
-          wewnętrzne firmy, aby uzyskać dokładną odpowiedź. Po zweryfikowaniu informacji udzielam klientowi precyzyjnej
-          odpowiedzi lub kroków, które pozwolą rozwiązać jego problem, a w razie potrzeby przekazuję sprawę do bardziej
+          wewnętrzne firmy, aby uzyskać dokładną odpowiedź. Po zweryfikowaniu informacji udzielam klientowi
+          precyzyjnej
+          odpowiedzi lub kroków, które pozwolą rozwiązać jego problem, a w razie potrzeby przekazuję sprawę do
+          bardziej
           doświadczonego członka zespołu.
         </p>
       </details>
@@ -369,7 +434,8 @@
         <summary>Jakiego aspektu z ogłoszenia o pracę musisz się najbardziej douczyć?</summary>
         <p>
           Najbardziej chciałabym się douczyć zwiększenia automatyzacji zadań przy pomocy AI. Miałam już okazję
-          wykorzystywać AI, ale uważam, że bardzo pożyteczne byłoby dla mnie opanowanie automatyzacji procesów przy jej
+          wykorzystywać AI, ale uważam, że bardzo pożyteczne byłoby dla mnie opanowanie automatyzacji procesów przy
+          jej
           pomocy.
         </p>
       </details>
@@ -405,7 +471,8 @@
       <details>
         <summary>Jakie umiejętności chciał(a)byś rozwinąć w najbliższych 6 miesiącach?</summary>
         <p>
-          Ciekawi mnie organizacja eventów i narzędzia jakie się do nich wykorzystuje. Jednocześnie chciałabym rozwijać
+          Ciekawi mnie organizacja eventów i narzędzia jakie się do nich wykorzystuje. Jednocześnie chciałabym
+          rozwijać
           swoje umiejętności techniczne, zarówno w kontekście technologii webowych, mobilnych, jak i AI.
         </p>
       </details>
