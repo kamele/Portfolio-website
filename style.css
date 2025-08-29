@@ -144,3 +144,15 @@ details {
     padding: 14px 16px;
     margin-top: 10px
 }
+.project-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1em auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--panel);
+    /* Ensure it scales like .card */
+    width: 100%;
+    object-fit: contain;
+}
