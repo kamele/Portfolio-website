@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moje Portfolio — AI Worklog + Q&A</title>
+  <meta name="description" content="Responsywne portfolio z dokumentacją pracy z AI i sekcją Q&A." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --panel: #111319;
+      --panel-2: #171924;
+      --text: #e6e8ee;
+      --muted: #a7adbb;
+      --brand: #7c5cff;
+      --accent: #2ee6a6;
+      --danger: #ff5c7a;
+      --ring: rgba(124,92,255,.35);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    body.light {
+      --bg:#f7f8fb;
+      --panel:#ffffff;
+      --panel-2:#f1f3f9;
+      --text:#0e1117;
+      --muted:#5b657a;
+      --ring:rgba(124,92,255,.25);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      transition: background 0.3s, color 0.3s;
+    }
+    header{position:sticky; top:0; z-index:40; backdrop-filter:blur(10px); background:rgba(17,17,17,.95); border-bottom:1px solid rgba(124,92,255,.15); transition: background 0.3s;}
+    body.light header{background:rgba(247,248,251,.95)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:1rem}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .logo{width:36px; height:36px; display:grid; place-items:center; background:linear-gradient(135deg,var(--brand),#9f93ff); color:white; border-radius:10px;}
+    .nav a{font-weight:600; color:var(--text); text-decoration:none; margin-inline:.5rem}
+    .btn{padding:8px 12px; border-radius:8px; border:none; cursor:pointer; background:var(--brand); color:#fff;}
+
+    section{padding:2rem; max-width:1000px; margin:auto}
+    .card{background:var(--panel); padding:1rem; border-radius:var(--radius); transition: background 0.3s}
+    .stack{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{padding:6px 10px; border-radius:999px; background:rgba(124,92,255,.12); border:1px solid rgba(124,92,255,.35); font-size:12px}
+    details{background:var(--panel); border-radius:12px; padding:14px 16px; margin-top:10px}
+
+    /* Karuzela */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+    .carousel-item .card {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-btn {
+      background: var(--brand);
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">AI</div>
+        <span>Twoje Imię</span>
+      </div>
+      <nav>
+        <a href="#about-me">O mnie</a>
+        <a href="#experience">Doświadczenie</a>
+        <a href="#skills">Umiejętności</a>
+        <a href="#projects">Projekty</a>
+        <a href="#ai-worklog">AI Worklog</a>
+        <a href="#qa">Q&A</a>
+      </nav>
+      <button id="themeToggle" class="btn">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="about-me">
+      <h2>Informacje o mnie</h2>
+      <div class="card">
+        <p>Opis zawodowy i doświadczenie...</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Doświadczenie</h2>
+      <p>Szczegółowe informacje o Twoim doświadczeniu zawodowym i projektowym.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Umiejętności techniczne</h2>
+      <div class="stack">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projekty</h2>
+      <div class="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-item"><div class="card">Projekt 1 – opis</div></div>
+          <div class="carousel-item"><div class="card">Projekt 2 – opis</div></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn">◀</button>
+          <button class="carousel-btn" id="nextBtn">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-worklog">
+      <h2>Dokumentacja pracy z AI</h2>
+      <p>Utorzenie szkieletu strony</p>
+      <p>Ustawienie ramowych sekcji</p>
+      <p>Ustawienie kolorystyki i zmiany motywu</p>
+      <p>Odpowiedzi na pytania - redakcja</p>
+    </section>
+
+    <section id="qa">
+      <h2>Q&A</h2>
+
+      <h3>Frontend & Podstawy</h3>
+      <details>
+        <summary>Opisz różnicę między position: relative, absolute i fixed w CSS</summary>
+        <p>
+          Ustawienie właściwości position w CSS określa sposób pozycjonowania elementu na stronie.
+          W przypadku wartości <strong>relative</strong> element pozostaje w normalnym układzie dokumentu,
+          ale można go przesunąć względem jego pierwotnej pozycji za pomocą właściwości top, right, bottom lub left. 
+          <strong>absolute</strong> usuwa element z normalnego układu i pozycjonuje go względem najbliższego
+          przodka, który ma ustawioną właściwość position inną niż static. 
+          <strong>fixed</strong> również usuwa element z układu, ale jego pozycja jest ustalana względem
+          okna przeglądarki i pozostaje niezmienna podczas przewijania strony.
+        </p>
+      </details>
+      <details>
+        <summary>Co to jest Event Bubbling w JavaScript?</summary>
+        <p>
+          Event Bubbling w JavaScript to mechanizm, w którym zdarzenie wywołane na elemencie potomnym
+          propaguje się w górę drzewa DOM do jego rodziców, umożliwiając obsługę zdarzeń zarówno na elemencie,
+          jak i na jego przodkach.
+        </p>
+      </details>
+      <details>
+        <summary>Jak wyśrodkować element w CSS? Podaj 2–3 różne metody</summary>
+        <p>
+          Element w CSS można wyśrodkować na kilka sposobów, w zależności od typu elementu i kierunku wyśrodkowania.
+          Poziome wyśrodkowanie elementu blokowego o określonej szerokości można uzyskać za pomocą
+          <code>margin: auto</code>. W przypadku Flexbox’a i Grid’a elementy można wyśrodkować zarówno poziomo,
+          jak i pionowo, używając odpowiednio właściwości <code>justify-content</code> i <code>align-items</code>
+          dla flexbox lub <code>place-items: center</code> dla grid.
+        </p>
+      </details>
+
+      <h3>API & Integracje</h3>
+      <details>
+        <summary>Czym różni się metoda GET od POST?</summary>
+        <p>
+          Metoda <strong>GET</strong> służy do pobierania danych z API i przekazuje parametry zazwyczaj w adresie URL.
+          Metoda <strong>POST</strong> służy do tworzenia nowych wpisów lub przesyłania danych do serwera, przy czym parametry
+          wysyłane są w treści żądania (body), co pozwala przesyłać większe ilości danych i ukrywać je przed użytkownikiem. <br>
+          Przykład: metoda GET może służyć do pobrania listy użytkowników z API, a POST do dodania nowego użytkownika do bazy danych.
+        </p>
+      </details>
+      <details>
+        <summary>Co to jest JSON i dlaczego jest popularny w API?</summary>
+        <p>
+          JSON (JavaScript Object Notation) to lekki format wymiany danych, który jest czytelny dla człowieka
+          i łatwy do przetworzenia przez maszynę. Jest szeroko wykorzystywany w API, ponieważ umożliwia szybkie
+          i efektywne przesyłanie danych między serwerem a klientem, a jego struktura obiektów i tablic
+          jest intuicyjna i uniwersalnie wspierana w większości języków programowania.
+        </p>
+      </details>
+      <details>
+        <summary>Opisz, jak byś debugował sytuację, gdy fetch() do API zwraca błąd 403</summary>
+        <p>
+          Błąd 403 (Forbidden) oznacza brak uprawnień do uzyskania żądanych danych.
+          Debugowanie należy rozpocząć od sprawdzenia, czy żądanie wysyłane jest z odpowiednią autoryzacją
+          (token, nagłówek Authorization). Następnie należy upewnić się, że token lub klucz API jest aktualny
+          i ma wystarczające prawa dostępu. Warto sprawdzić metodę HTTP, adres URL oraz szczegóły w zakładce Network
+          w przeglądarce. W razie potrzeby można przetestować żądanie w Postmanie lub curl.
+        </p>
+      </details>
+
+      <h3>Automatyzacje & Narzędzia</h3>
+      <details>
+        <summary>Czy korzystałeś z Make, n8n lub Zapier? Jeśli tak – opisz przykład</summary>
+        <p>
+          Nie miałam jeszcze okazji bezpośrednio korzystać z narzędzi takich jak Make, n8n czy Zapier,
+          jednak dostrzegam w nich duży potencjał w automatyzowaniu procesów i ułatwieniu codziennej pracy.
+        </p>
+      </details>
+      <details>
+        <summary>Jeśli nie – wyjaśnij swoimi słowami, do czego mogą służyć takie narzędzia</summary>
+        <p>
+          Make, n8n czy Zapier służą do automatyzowania różnych zadań między aplikacjami i usługami online.
+          Umożliwiają tworzenie przepływów pracy, gdzie zdarzenia w jednej aplikacji automatycznie
+          wywołują działania w innych, np. zapisanie danych w bazie po otrzymaniu e-maila. 
+          Dzięki temu można zaoszczędzić czas, ograniczyć ręczne wykonywanie powtarzalnych czynności i łatwo integrować różne systemy bez konieczności pisania własnego kodu.
+        </p>
+      </details>
+      <details>
+        <summary>Jak rozumiesz pojęcie "webhook"?</summary>
+        <p>
+          Webhook to mechanizm umożliwiający jednej aplikacji wysyłanie powiadomień lub danych do innej aplikacji w momencie, 
+          gdy zajdzie określone zdarzenie. Działa on w formie specjalnego adresu URL, 
+          na który wysyłane jest żądanie HTTP (najczęściej POST) z informacjami o zdarzeniu, 
+          np. nowym zamówieniu, zaktualizowanym rekordzie lub wiadomości e-mail. 
+          Dzięki webhookom możliwe jest natychmiastowe reagowanie na zdarzenia w systemach zewnętrznych, 
+          co ułatwia automatyzację procesów i integrację różnych aplikacji.
+        </p>
+      </details>
+      <details>
+        <summary>Wyobraź sobie, że klient chce automatycznie otrzymywać raport w PDF po każdym wydarzeniu. Jakich narzędzi użyjesz?</summary>
+        <p>
+          Do tego celu dobrze sprawdzą się narzędzia do automatyzacji takie jak Make, n8n czy Zapier.
+          Pozwolą one pobrać dane, wygenerować PDF i wysłać go e-mailem w reakcji na zdarzenie.
+        </p>
+      </details>
+
+      <h3>AI & Agenty</h3>
+      <details>
+        <summary>Czym różni się "prompt" od "system prompt"?</summary>
+        <p>
+          "Prompt" to dowolne wejście tekstowe. "System prompt" ustawia kontekst, ton lub rolę, jaką model ma przyjąć
+          podczas całej sesji. Określa sposób interpretacji wszystkich kolejnych promptów.
+        </p>
+      </details>
+      <details>
+        <summary>Co to jest API Key i dlaczego należy je chronić?</summary>
+        <p>
+          API Key to unikalny ciąg znaków, który służy do identyfikacji i uwierzytelniania użytkownika 
+          lub aplikacji podczas korzystania z API. Należy go chronić, 
+          ponieważ każdy, kto posiada taki klucz, może uzyskać dostęp do zasobów API 
+          i wykonywać operacje w imieniu właściciela klucza, 
+          co może prowadzić do nieautoryzowanego użycia lub wycieków danych.
+        </p>
+      </details>
+      <details>
+        <summary>Opisz sytuację, w której AI może pomóc w supporcie technicznym</summary>
+        <p>
+         AI może znacząco wspierać dział wsparcia technicznego, na przykład poprzez automatyczne odpowiadanie na często zadawane pytania klientów w formie czatu lub e-maila. Może analizować zgłoszenia, klasyfikować je według rodzaju problemu i sugerować odpowiednie rozwiązania, co pozwala pracownikom skupić się na bardziej skomplikowanych przypadkach. Dodatkowo AI może monitorować systemy w czasie rzeczywistym, wykrywać potencjalne błędy i generować wstępne raporty dla zespołu technicznego, przyspieszając proces diagnozy i naprawy problemów.
+        </p>
+      </details>
+      <details>
+        <summary>Co rozumiesz przez pojęcie "agent AI" albo MCP?</summary>
+        <p>
+          Agent AI to system oparty na sztucznej inteligencji. Może on podejmować autonomiczne decyzje i wykonywać określone zadania. Robi to na podstawie dostępnych danych (bazy wiedzy) i kontekstu.
+        </p>
+        <p>MCP (Model Context Protocol) służy do zarządzania kontekstem podczas interakcji z AI. Pozwala na zachowanie informacji z poprzednich kroków i uwzględnienie jej w dalszych odpowiedziach.
+        </p>
+      </details>
+
+      <h3>Problem Solving</h3>
+      <details>
+        <summary>Klient pisze: "Wkleiłem wasz kod na stronę i wszystko się rozjechało". Jakie pierwsze kroki byś podjął?</summary>
+        <p>
+          Poprosiłabym klienta o przesłanie pliku z wklejonym kodem i sprawdziła, czy został on poprawnie wklejony w strukturze strony. Następnie zweryfikowałabym, czy kod nie koliduje z istniejącymi stylami CSS lub skryptami JavaScript. W kolejnym kroku przetestowałabym kod w środowisku deweloperskim, aby zidentyfikować przyczynę „rozjechania” elementów i przygotować instrukcje lub poprawki umożliwiające prawidłowe wyświetlanie strony.
+        </p>
+      </details>
+      <details>
+        <summary>Miał(a)byś połączyć formularz kontaktowy z Google Sheets. Jak byś to zrobił(a)?</summary>
+        <p>
+          Sposób połączenia formularza kontaktowego z Google Sheets zależy od tego, jak został zbudowany formularz. Zakładając, że jest to formularz Google, najpierw sprawdziłabym w dokumentacji, czy można zmienić lokalizację końcowych wyników – formularze Google automatycznie zapisują odpowiedzi w arkuszu Google, więc nie powinno to przysporzyć problemów. W przypadku formularzy zewnętrznych można użyć Google Apps Script do napisania skryptu, który odbierze dane i zapisze je w odpowiednich komórkach arkusza, lub skorzystać z narzędzi do automatyzacji, takich jak Zapier, Make czy n8n, które pozwalają łatwo przesyłać nowe zgłoszenia do arkusza bez konieczności pisania własnego kodu.
+        </p>
+      </details>
+      <details>
+        <summary>Klient zgłasza, że iFrame jest zbyt szeroki. Jak sprawdzisz i poprawisz problem?</summary>
+        <p>
+          Pierwszym krokiem byłoby poproszenie klienta o przesłanie linku do strony lub fragmentu kodu z iFrame, 
+          aby móc sprawdzić jego aktualne ustawienia. 
+          Następnie zweryfikowałabym w narzędziach deweloperskich przeglądarki szerokość iFrame oraz stylów CSS, 
+          które mogą wpływać na jego rozmiar i układ strony. Aby poprawić problem, można ustawić w kodzie iFrame atrybuty width 
+          i height w procentach lub użyć CSS z właściwościami <code>max-width: 100%</code> i <code>height: auto</code>, 
+          co pozwoli dostosować iFrame do szerokości kontenera i zapewni responsywne wyświetlanie na różnych urządzeniach.
+        </p>
+      </details>
+      <details>
+        <summary>Jak sprawdzić dokumentację i przygotować integrację API Hugging Face do analizy tekstu?</summary>
+        <p>
+          Pierwszym krokiem byłoby dokładne przejrzenie dokumentacji API Hugging Face, aby zrozumieć dostępne endpointy, wymagane parametry, metody uwierzytelniania oraz formaty danych wejściowych i wyjściowych. Następnie przygotowałabym środowisko testowe, w którym mogłabym wysyłać przykładowe żądania do API i analizować otrzymywane odpowiedzi, aby upewnić się, że integracja działa poprawnie. Kolejnym krokiem byłoby napisanie kodu w naszym systemie, który wysyła dane tekstowe do API, odbiera wynik analizy i zapisuje go w odpowiedniej strukturze w systemie, a na końcu przetestowanie całego procesu pod kątem różnych scenariuszy, aby zapewnić stabilność i poprawność integracji.
+        </p>
+      </details>
+      <details>
+        <summary>Na supporcie klient pyta o funkcję, której nie znasz. Co robisz?</summary>
+        <p>
+          W sytuacji, gdy klient pyta o funkcję, której nie znam, najpierw przyznaję otwarcie, że nie posiadam od razu pełnej wiedzy na ten temat, aby zachować przejrzystość i profesjonalizm. Następnie zbieram jak najwięcej informacji od klienta, np. w jakim kontekście funkcja jest używana, i sprawdzam dokumentację lub zasoby wewnętrzne firmy, aby uzyskać dokładną odpowiedź. Po zweryfikowaniu informacji udzielam klientowi precyzyjnej odpowiedzi lub kroków, które pozwolą rozwiązać jego problem, a w razie potrzeby przekazuję sprawę do bardziej doświadczonego członka zespołu.
+        </p>
+      </details>
+
+      <h3>Rozwój & Nauka</h3>
+      <details>
+        <summary>Jakiego aspektu z ogłoszenia o pracę musisz się najbardziej douczyć?</summary>
+        <p>
+          Najbardziej chciałabym się douczyć zwiększenia automatyzacji zadań przy pomocy AI. Miałam już okazję wykorzystywać AI, ale uważam, że bardzo pożyteczne byłoby dla mnie opanowanie automatyzacji procesów przy jej pomocy.
+        </p>
+      </details>
+      <details>
+        <summary>Jakie źródła wykorzystujesz do nauki programowania/technologii?</summary>
+        <p>
+          Do nauki programowania/ technologii korzystam z różnych źródeł w zależności od potrzeby. Do najczęściej wykorzystywanych należy dokumentacja danej technologii oraz artykuły, jeżeli potrzebna jest wiedza z konkretnego zagadnienia. Przydatną metodą jest również proszenie narzędzi AI o poprawki w kodzie oraz ich wyjaśnienie. Sprawdza się to szczególnie na początkowym etapie nauki, gdyż takie zagadnienia są szeroko opisane w źródłach, co zmniejsza szanse halucynacji. Warto analizować takie odpowiedzi i ich źródła, by poznawać inne sposoby rozwiązywania jakiegoś problemu w danej technologii.
+      </p>
+      </details>
+
+      <h3>Organizacja pracy</h3>
+      <details>
+        <summary>Jak planujesz swój dzień pracy, aby ogarnąć kilka różnych zadań?</summary>
+        <p>
+          Planując swój dzień najpierw rozpisuje wszystkie zadania do wykonania i określam ich priorytet. Zazwyczaj ustawiam zadania z największym priorytetem na początek. Jako, że jest to praca zespołowa to przy zadaniach o podobnym priorytecie zwracam uwagę na to co może być blockerem dla innych członków zespołu. W przypadku czasowego przyblokowania w jakimś zadaniu, czasem realizuje krótsze zadania, by przyspieszyć później pracę.        </p>
+      </details>
+      <details>
+        <summary>Co najbardziej motywuje Cię do nauki nowych technologii?</summary>
+        <p>
+          Do nauki nowych technologii najbardziej motywuje mnie możliwość ich późniejszego wykorzystania. Mam dużo większą satysfakcję z nauczenia się technologii która jest mi przydatna, niż uczenia dla samego uczenia.
+        </p>
+      </details>
+      <details>
+        <summary>Jakie umiejętności chciał(a)byś rozwinąć w najbliższych 6 miesiącach?</summary>
+        <p>
+          Ciekawi mnie organizacja eventów i narzędzia jakie się do nich wykorzystuje. Jednocześnie chciałabym rozwijać swoje umiejętności techniczne, zarówno w kontekście technologii webowych, mobilnych, jak i AI.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <script>
+    // Theme change
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      toggleBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+    });
+
+    // Carousel
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + track.children.length) % track.children.length;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % track.children.length;
+      updateCarousel();
+    });
+  </script>
+</body>
+</html>
