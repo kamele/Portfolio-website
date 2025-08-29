@@ -120,7 +120,21 @@
         border-radius: 999px;
         background: rgba(124, 92, 255, .12);
         border: 1px solid rgba(124, 92, 255, .35);
-        font-size: 12px
+        font-size: 12px;
+        margin-right: 0.5em; 
+        margin-bottom: 0.5em
+    }
+
+    .skills-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 0.5em;
+    }
+    .skills-title {
+      min-width: 180px;
+      font-weight: 600;
+      margin-right: 0.5em; 
     }
 
     details {
