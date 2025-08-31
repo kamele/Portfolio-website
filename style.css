@@ -111,7 +111,7 @@ section {
 
 .stack {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px
 }
 
@@ -133,7 +133,7 @@ section {
 }
 
 .skills-title {
-    min-width: 180px;
+    min-width: 100px;
     font-weight: 600;
     margin-right: 0.5em;
 }
@@ -144,6 +144,7 @@ details {
     padding: 14px 16px;
     margin-top: 10px
 }
+
 .project-image {
     display: block;
     max-width: 100%;
@@ -152,7 +153,6 @@ details {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     background: var(--panel);
-    /* Ensure it scales like .card */
     width: 100%;
     object-fit: contain;
 }
