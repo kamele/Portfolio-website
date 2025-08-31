@@ -133,7 +133,6 @@ section {
 }
 
 .skills-title {
-    min-width: 180px;
     font-weight: 600;
     margin-right: 0.5em;
 }
@@ -152,7 +151,6 @@ details {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     background: var(--panel);
-    /* Ensure it scales like .card */
     width: 100%;
     object-fit: contain;
 }
