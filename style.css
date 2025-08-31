@@ -39,11 +39,14 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background 0.3s, color 0.3s;
+    padding-top: 72px;
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 40;
     backdrop-filter: blur(10px);
     background: rgba(17, 17, 17, .95);
